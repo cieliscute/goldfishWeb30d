@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DAY1</title>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;700&display=swap" rel="stylesheet">
+  <style>
+    .l-bg-gradient{
+      background: linear-gradient(115deg,#7bf 50%,transparent 50%) center center/100% 100%,
+                  url("https://picsum.photos/200/300") right center /auto 100%;
+    }
+  </style>
 </head>
+
 <body>
-  <div class="text-5xl text-blue-700">test</div>
+  <!-- 用tailwind沒有辦法客製化到太細，就算使用layer去新增一個bg-gradient-to-115,仍然沒辦法撰寫多重背景，所以先註解起來，使用在header內加上style的方式撰寫多重背景，tailwind的寫法就留在下方(line22)-->
+  <!-- <div class="s-banner h-screen w-full bg-gradient-to-115 from-teal-600 from-50% to-50%"> -->
+  <div class="s-banner h-screen w-full l-bg-gradient">
+    <div class="container h-full m-auto">
+      <div class="h-full flex flex-col justify-center items-start">
+        <h1 class="text-6xl leading-normal border-b-2">金魚都能懂的<small class="text-2xl block">這個畫面怎麼切</small></h1>
+        <h2>圖文滿版區塊</h2>
+        <p>這個畫面真的很常見～在各種樣板網站可說是設計常客</p>
+        <p>金魚切不出來實在說不過去啊</p>
+      </div>
+    </div>
+  </div>
+  </div>
 
 
-  
+
+  <script type="module" src="../../main.js"></script>
 </body>
+
 </html>
