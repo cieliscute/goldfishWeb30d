@@ -1,15 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DAY3</title>
+  <style>
+    * {
+      /* outline: 1px solid red; */
+    }
+    .n-decoration{
+
+    }
+  </style>
 </head>
-<body>
-
-
+<!-- 筆記：
+  因為需要製作三角形，原本想使用pseudo elements,但是tailwind css有特別提到說其實大部分狀況都不需要使用到偽元素
+  使用絕對定位等等的方式都可以滿足大部分的需求
+  但是因為三角形的border-left跟border-right會跟父元素的寬度相關，rwd在製作上需要特別調整，蠻麻煩的
   
+  因為tailwind css有提供grid(bootstrap5只有提供flex)
+  這次嘗試使用grid來撰寫，在gap方面的確相比flex好調整很多
+  但是語法上可能還需要多加熟悉
+
+  最後就是其實DAY2就已經有寫過的，父層hover子層要有摸到的效果，需要在父層額外撰寫group
+  這次還沒有使用到peer(同層的hover),也沒有使用到巢狀
+  使用group去撰寫已經很足夠了
+-->
+
+<body class="bg-sky-950 h-full flex items-center">
+  <div class="container m-auto">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-40">
+      <li class="border border-blue-300  hover:-translate-y-8 transition duration-300 group  hover:border-amber-600">
+        <img src="https://picsum.photos/id/687/600/400" alt="" class="w-full">
+        <div
+          class="text-center px-6 pb-4 relative  bg-white group-hover:bg-gradient-to-t group-hover:from-[#FB8076] group-hover:to-[#FEB85D] transition-colors duration-300">
+          <div
+            class="n-decoration absolute w-full h-0 left-0 border-t-[40px] border-t-transparent -translate-y-full border-white group-hover:border-l-[#FEB85D] group-hover:border-r-[#FEB85D] sm:border-l-[154px] sm:border-r-[154px] md:border-l-[120px] md:border-r-[120px] md:border-t-[30px] lg:border-l-[163px] lg:border-r-[163px] xl:border-l-[205.55px] xl:border-r-[205.55px] 2xl:border-l-[248.33px] 2xl:border-r-[248.33px]">
+          </div>
+          <h2
+            class="pt-4 pb-2 border-b-2 border-b-gray-400 group-hover:text-white transition duration-300 group-hover:border-b-white">
+            Lorem ipsum dolor sit amet.</h2>
+          <p class="group-hover:text-white transition-colors duration-300">Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Fugit minus quasi quis aspernatur tempora id at
+            veritatis libero, modi officia!</p>
+        </div>
+      </li>
+      <li class="border border-blue-300  hover:-translate-y-8 transition duration-300 group">
+        <img src="https://picsum.photos/id/688/600/400" alt="" class="w-full">
+        <div
+          class="text-center px-6 pb-4 relative  bg-white group-hover:bg-gradient-to-t group-hover:from-[#FB8076] group-hover:to-[#FEB85D] transition-colors duration-300">
+          <div
+            class="n-decoration absolute w-full h-0 left-0 border-t-[40px] border-t-transparent -translate-y-full border-white group-hover:border-l-[#FEB85D] group-hover:border-r-[#FEB85D] sm:border-l-[154px] sm:border-r-[154px] md:border-l-[120px] md:border-r-[120px] md:border-t-[30px] lg:border-l-[163px] lg:border-r-[163px] xl:border-l-[205.55px] xl:border-r-[205.55px] 2xl:border-l-[248.33px] 2xl:border-r-[248.33px]">
+          </div>
+          <h2
+            class="pt-4 pb-2 border-b-2 border-b-gray-400 group-hover:text-white transition duration-300 group-hover:border-b-white">
+            Lorem ipsum dolor sit amet.</h2>
+          <p class="group-hover:text-white transition-colors duration-300">Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Fugit minus quasi quis aspernatur tempora id at
+            veritatis libero, modi officia!</p>
+        </div>
+      </li>
+      <li class="border border-blue-300  hover:-translate-y-8 transition duration-300 group">
+        <img src="https://picsum.photos/id/637/600/400" alt="" class="w-full">
+        <!-- 漸層色不支援transition... -->
+        <div
+          class="text-center px-6 pb-4 relative  bg-white group-hover:bg-gradient-to-t group-hover:from-[#FB8076] group-hover:to-[#FEB85D] transition-colors duration-300">
+          <!-- 這個三角形太麻煩了吧... 寬度還要另外算，因為要配合rwd 寬度不支援percentage的寫法... -->
+          <div
+            class="n-decoration absolute w-full h-0 left-0 border-t-[40px] border-t-transparent -translate-y-full border-white group-hover:border-l-[#FEB85D] group-hover:border-r-[#FEB85D] sm:border-l-[154px] sm:border-r-[154px] md:border-l-[120px] md:border-r-[120px] md:border-t-[30px] lg:border-l-[163px] lg:border-r-[163px] xl:border-l-[205.55px] xl:border-r-[205.55px] 2xl:border-l-[248.33px] 2xl:border-r-[248.33px]">
+          </div>
+          <h2
+            class="pt-4 pb-2 border-b-2 border-b-gray-400 group-hover:text-white transition duration-300 group-hover:border-b-white">
+            Lorem ipsum dolor sit amet.</h2>
+          <p class="group-hover:text-white transition-colors duration-300">Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Fugit minus quasi quis aspernatur tempora id at
+            veritatis libero, modi officia!</p>
+        </div>
+      </li>
+    </ul>
+  </div>
 
   <script type="module" src="../../main.js"></script>
 </body>
+
 </html>
